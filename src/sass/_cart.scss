@@ -1,0 +1,84 @@
+.cart {
+  display: flex;
+  @include mobile {
+    flex-direction: column;
+  }
+  &__info {
+    box-shadow: $box-shadow;
+    width: 28%;
+    padding: 1.5rem;
+    margin-right: 2rem;
+    height: 100%;
+    @include mobile {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+    &__product span {
+      font-size: 1.5rem;
+    }
+    &__price {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1.5rem;
+      font-size: 1.5rem;
+      color: $main-color;
+      font-weight: 500;
+    }
+    button {
+      display: block;
+      width: 100%;
+      margin-top: 1rem;
+    }
+  }
+
+  &__list {
+    flex-grow: 1;
+    max-height: 40rem;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+  &__item {
+    @include flex(center, flex-start);
+    margin-bottom: 2rem;
+    &__img {
+      margin-right: 1rem;
+      img {
+        width: 9.5rem;
+      }
+    }
+    &__info {
+      @include flex(center, space-between);
+      width: 100%;
+      font-size: 1.25rem;
+      @include mobile {
+        flex-direction: column;
+        @include flex(flex-start, flex-start);
+        font-size: 1rem;
+      }
+      &__detail {
+        width: 35%;
+        @include mobile {
+          width: unset;
+          margin-bottom: 1rem;
+        }
+      }
+
+      &__quantity {
+        @include mobile {
+          margin: 1rem 0;
+        }
+      }
+
+      &__delete {
+        font-size: 2rem;
+        cursor: pointer;
+        transition: 0.2s;
+        &:hover {
+          color: $main-color;
+        }
+      }
+    }
+  }
+}

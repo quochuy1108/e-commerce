@@ -1,0 +1,23 @@
+.section {
+  margin-bottom: 80px;
+
+  & > * ~ * {
+    margin-top: 70px;
+  }
+
+  &__title {
+    font-size: 2rem;
+    text-transform: capitalize;
+    text-align: center;
+  }
+}
+
+.section.marginTop {
+  margin-top: $header-height;
+  @include tablet {
+    margin-top: $header-tablet-height + 20;
+  }
+  @include mobile {
+    margin-top: $header-mobile-height + 20;
+  }
+}

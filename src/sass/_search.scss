@@ -1,0 +1,49 @@
+.search {
+  position: absolute;
+  width: 26rem;
+  height: 22rem;
+  padding: 1rem 0;
+  background: #f8f8f8;
+  top: 3.75rem;
+  right: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  &:hover {
+    color: unset;
+  }
+  &__input {
+    padding: 0 2rem;
+    input {
+      width: 100%;
+      outline: none;
+      padding: 0.5rem 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+  &__content {
+    height: 17.5rem;
+    overflow: auto;
+    &__item {
+      @include flex(center, flex-start);
+      padding: 0 2rem;
+      transition: all 0.2s;
+      &:hover {
+        background-color: rgb(241, 241, 241);
+      }
+      &__img img {
+        width: 5.25rem;
+        margin-right: 2rem;
+      }
+      &__title {
+        font-size: 1rem;
+      }
+    }
+  }
+}
